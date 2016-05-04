@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Lifetutor\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
