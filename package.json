@@ -10,6 +10,7 @@
     "bootstrap-sass": "^3.3.0"
   },
   "dependencies": {
+    "font-awesome": "github:fortawesome/Font-Awesome",
     "jquery": "^2.2.3"
   }
 }
