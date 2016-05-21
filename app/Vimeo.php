@@ -4,13 +4,11 @@ namespace Lifetutor;
 
 use Illuminate\Database\Eloquent\Model;
 use Lifetutor\Traits\PostContent;
+use Lifetutor\Traits\VideoContent;
 
-class Video extends Model
+class Vimeo extends Model
 {
-	use PostContent;
+	use VideoContent;
 
-	public function video()
-	{
-		return $this->morphTo();
-	}
+	protected $table = 'vimeo';
 }

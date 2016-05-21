@@ -1,21 +1,28 @@
 <?php
 
-namespace Lifetutor\Http\Controllers;
+namespace Lifetutor\Http\Controllers\Categories;
 
 use Illuminate\Http\Request;
 
+use Lifetutor\Category;
+use Lifetutor\Http\Controllers\Controller;
 use Lifetutor\Http\Requests;
 
-class TopicsController extends Controller
+class CoursesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, $category_id)
     {
-        //
+        $category = Category::findOrFail($category_id);
+        $courses = $category->courses;
+
+        return view('categories.courses.index')
+            ->with('category', $category)
+            ->with('courses', $courses);
     }
 
     /**
@@ -23,7 +30,7 @@ class TopicsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request, $category_id)
     {
         //
     }
@@ -34,7 +41,7 @@ class TopicsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $category_id)
     {
         //
     }
@@ -45,9 +52,14 @@ class TopicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $category_id, $course_id)
     {
-        //
+        $category = Category::findOrFail($category_id);
+        $course = $category->courses()->findOrFail($course_id);
+
+        return view('categories.courses.show')
+            ->with('category', $category)
+            ->with('course', $course);
     }
 
     /**
@@ -56,7 +68,7 @@ class TopicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $category_id, $topic_id)
     {
         //
     }
@@ -68,7 +80,7 @@ class TopicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $category_id, $topic_id)
     {
         //
     }
@@ -79,7 +91,7 @@ class TopicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $category_id, $topic_id)
     {
         //
     }

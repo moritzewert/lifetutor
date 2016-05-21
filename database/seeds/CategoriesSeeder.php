@@ -14,25 +14,32 @@ class CategoriesSeeder extends Seeder
     {
         $categories = [
             [
-                'title' => 'Schule'
+                'title' => 'Schule',
+                'description' => 'Alles rund um Schule'
             ],
             [
-                'title' => 'Studium'
+                'title' => 'Studium',
+                'description' => 'Alles rund ums Studium'
             ],
             [
-                'title' => 'Ausbildung'
+                'title' => 'Ausbildung',
+                'description' => 'Alles rund um die Ausbildung'
             ],
             [
-                'title' => 'Beruf'
+                'title' => 'Beruf',
+                'description' => 'Alles rund um den Beruf'
             ],
             [
-                'title' => 'Erste Wohnung'
+                'title' => 'Erste Wohnung',
+                'description' => 'Alles rund um die erste eigene Wohnung'
             ],
             [
-                'title' => 'Urlaub'
+                'title' => 'Urlaub',
+                'description' => 'Alles rund um den Urlaub'
             ],
             [
-                'title' => 'Versicherung'
+                'title' => 'Versicherung',
+                'description' => 'Alles rund um Versicherungen'
             ]
         ];
 

@@ -15,4 +15,9 @@ class Topic extends Model
 	{
 		return $this->belongsTo('Lifetutor\Topic');
 	}
+
+	public function courses()
+	{
+		return $this->hasMany('Lifetutor\Course');
+	}
 }

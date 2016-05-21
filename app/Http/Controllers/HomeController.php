@@ -17,12 +17,17 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+    public function welcome()
+    {
+        return view('welcome');
+    }
+
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function home()
     {
         return view('home');
     }
