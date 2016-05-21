@@ -8,12 +8,6 @@
     <title>Lifetutor</title>
 
     <link href="{{ elixir('css/app.css') }}" rel="stylesheet">
-
-    <style>
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
@@ -31,14 +25,14 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        Lifetutor
+                        <i class="fa fa-road"></i> Lifetutor
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ url('/home') }}">Home</a></li>
+                        <li><a href="{{ url('/home') }}">Categories</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

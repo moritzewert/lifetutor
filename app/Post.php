@@ -11,8 +11,18 @@ class Post extends Model
 	    return $this->belongsTo('Lifetutor\User');
     }
 
-	public function category()
+	public function topic()
 	{
-		return $this->belongsTo('Lifetutor\Category');
+		return $this->belongsTo('Lifetutor\Topic');
+	}
+	
+	public function course()
+	{
+		return $this->belongsToMany('Lifetutor\Course');
+	}
+
+	public function content()
+	{
+		return $this->morphTo();
 	}
 }
