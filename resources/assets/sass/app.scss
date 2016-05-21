@@ -1,7 +1,9 @@
 $fa-font-path:        "//netdna.bootstrapcdn.com/font-awesome/4.6.1/fonts" !default; // for referencing Bootstrap CDN font files directly
-$font-family-sans-serif: 'Lato', sans-serif;
+@import "../../../node_modules/font-awesome/scss/font-awesome.scss";
+@import "../bootswatch_readable/_variables.scss";
+@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../bootswatch_readable/_bootswatch.scss";
 
-@import url(https://fonts.googleapis.com/css?family=Lato);
-@import "node_modules/font-awesome/scss/font-awesome.scss";
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-@import "../bootswatch_lumen/_bootswatch.scss";
+.fa-btn {
+  margin-right: 6px;
+}

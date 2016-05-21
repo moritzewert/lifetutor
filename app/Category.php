@@ -6,8 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    public function posts()
+    public function topics()
     {
-	    return $this->hasMany('Lifetutor\Post');
+	    return $this->hasMany('Lifetutor\Topic');
     }
+
+	public function posts()
+	{
+		return $this->hasManyThrough('Lifetutor\Post', 'Lifetutor\Topic');
+	}
 }

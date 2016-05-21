@@ -4,10 +4,9 @@ namespace Lifetutor\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Lifetutor\Category;
 use Lifetutor\Http\Requests;
 
-class CategoriesController extends Controller
+class TopicsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('categories.index')
-            ->with('categories', $categories);
+        //
     }
 
     /**
