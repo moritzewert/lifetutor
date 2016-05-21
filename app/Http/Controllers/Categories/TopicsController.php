@@ -1,25 +1,28 @@
 <?php
 
-namespace Lifetutor\Http\Controllers;
+namespace Lifetutor\Http\Controllers\Categories;
 
 use Illuminate\Http\Request;
 
+use Lifetutor\Category;
+use Lifetutor\Http\Controllers\Controller;
 use Lifetutor\Http\Requests;
-use Lifetutor\Post;
 
-class PostsController extends Controller
+class TopicsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, $category_id)
     {
-        $posts = Post::all();
+        $category = Category::findOrFail($category_id);
+        $topics = $category->topics;
 
-        return view('posts.index')
-            ->with('posts', $posts);
+        return view('categories.topics.index')
+            ->with('category', $category)
+            ->with('topics', $topics);
     }
 
     /**
@@ -27,7 +30,7 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request, $category_id)
     {
         //
     }
@@ -38,7 +41,7 @@ class PostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $category_id)
     {
         //
     }
@@ -49,9 +52,14 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $category_id, $topic_id)
     {
-        //
+        $category = Category::findOrFail($category_id);
+        $topic = $category->topics()->findOrFail($topic_id);
+
+        return view('categories.topics.show')
+            ->with('category', $category)
+            ->with('topic', $topic);
     }
 
     /**
@@ -60,7 +68,7 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $category_id, $topic_id)
     {
         //
     }
@@ -72,7 +80,7 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $category_id, $topic_id)
     {
         //
     }
@@ -83,7 +91,7 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $category_id, $topic_id)
     {
         //
     }

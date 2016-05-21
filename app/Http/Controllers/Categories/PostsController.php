@@ -1,24 +1,28 @@
 <?php
 
-namespace Lifetutor\Http\Controllers;
+namespace Lifetutor\Http\Controllers\Categories;
 
 use Illuminate\Http\Request;
 
 use Lifetutor\Category;
+use Lifetutor\Http\Controllers\Controller;
 use Lifetutor\Http\Requests;
 
-class CategoriesController extends Controller
+class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(Request $request, $category_id)
     {
-        $categories = Category::all();
-        return view('categories.index')
-            ->with('categories', $categories);
+        $category = Category::findOrFail($category_id);
+        $posts = $category->posts;
+
+        return view('categories.posts.index')
+            ->with('category', $category)
+            ->with('posts', $posts);
     }
 
     /**
@@ -26,7 +30,7 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(Request $request, $category_id)
     {
         //
     }
@@ -37,7 +41,7 @@ class CategoriesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $category_id)
     {
         //
     }
@@ -48,12 +52,14 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $category_id)
+    public function show(Request $request, $category_id, $topic_id)
     {
         $category = Category::findOrFail($category_id);
+        $post = $category->posts()->findOrFail($topic_id);
 
-        return view('categories.show')
-            ->with('category', $category);
+        return view('categories.posts.show')
+            ->with('category', $category)
+            ->with('post', $post);
     }
 
     /**
@@ -62,7 +68,7 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, $category_id)
+    public function edit(Request $request, $category_id, $topic_id)
     {
         //
     }
@@ -74,7 +80,7 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $category_id)
+    public function update(Request $request, $category_id, $topic_id)
     {
         //
     }
@@ -85,7 +91,7 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $category_id)
+    public function destroy(Request $request, $category_id, $topic_id)
     {
         //
     }

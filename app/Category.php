@@ -11,6 +11,11 @@ class Category extends Model
 	    return $this->hasMany('Lifetutor\Topic');
     }
 
+	public function courses()
+	{
+		return $this->hasManyThrough('Lifetutor\Course', 'Lifetutor\Topic');
+	}
+
 	public function posts()
 	{
 		return $this->hasManyThrough('Lifetutor\Post', 'Lifetutor\Topic');
