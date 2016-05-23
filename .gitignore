@@ -4,6 +4,12 @@
 Homestead.yaml
 Homestead.json
 .env
-
-
 **/.idea/*
+public/build/*
+public/css/app.css
+
+public/css/app.css.map
+
+public/js/app.js
+
+public/js/app.js.map
