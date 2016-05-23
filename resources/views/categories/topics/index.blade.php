@@ -6,7 +6,7 @@
     @foreach($topics as $topic)
         <div class="col-sm-3">
             <a href="{{ route('categories.topics.show', [$category, $topic]) }}">
-                <div class="panel panel-default">
+                <div class="panel panel-default" style="background-image: url({{ asset('background/'.$topic->background.'.png') }});">
                     <div class="panel-body">
                         <h4>{{ $topic->title }}</h4>
                         <p>{{ $topic->description }}</p>
