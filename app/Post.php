@@ -18,7 +18,7 @@ class Post extends Model
 	
 	public function course()
 	{
-		return $this->belongsToMany('Lifetutor\Course');
+		return $this->belongsToMany('Lifetutor\Course')->withPivot('order')->withTimestamps();
 	}
 
 	public function content()

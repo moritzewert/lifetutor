@@ -2,9 +2,6 @@
 
 @section('content')
     <h1>{{ $course->title }}</h1>
-<<<<<<< Updated upstream
-    Kurs
-=======
     <ul class="list-group">
         @foreach($course->posts as $post)
             <li class="list-group-item">
@@ -12,5 +9,4 @@
             </li>
         @endforeach
     </ul>
->>>>>>> Stashed changes
 @endsection

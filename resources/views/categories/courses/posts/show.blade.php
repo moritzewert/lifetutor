@@ -5,9 +5,9 @@
     @include('content.content', ['content' => $post->content])
     <div class="well">
         <div class="list-group">
-            @foreach($category->posts()->orderBy('order')->get() as $another)
+            @foreach($course->posts()->orderBy('order')->get() as $another)
                 <a href="{{ route('categories.courses.posts.show', [$category, $course, $another]) }}" class="list-group-item{{ $another->id == $post->id ? ' active':'' }}">
-                    {{ $another->title }}
+                    #{{ $another->pivot->order }} <strong>{{ $another->title }}</strong>
                 </a>
             @endforeach
         </div>

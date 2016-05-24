@@ -13,6 +13,6 @@ class Course extends Model
 
 	public function posts()
 	{
-		return $this->belongsToMany('Lifetutor\Post');
+		return $this->belongsToMany('Lifetutor\Post')->withPivot('order')->withTimestamps();
 	}
 }
