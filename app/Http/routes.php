@@ -19,6 +19,10 @@ Route::resource('categories', 'CategoriesController');
 Route::group(['namespace' => 'Categories'], function()
 {
     Route::resource('categories.courses', 'CoursesController');
+    Route::group(['namespace' => 'Courses'], function()
+    {
+        Route::resource('categories.courses.posts', 'PostsController');
+    });
     Route::resource('categories.posts', 'PostsController');
     Route::resource('categories.topics', 'TopicsController');
     Route::group(['namespace' => 'Topics'], function()
