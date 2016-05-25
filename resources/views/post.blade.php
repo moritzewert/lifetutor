@@ -2,8 +2,6 @@
 
 @section('content')
     @include('content', ['post' => $post])
-
-    <div class="well">
-        Comments etc.
-    </div>
+    @include('related', ['post' => $post])
+    @include('comments', ['post' => $post])
 @endsection

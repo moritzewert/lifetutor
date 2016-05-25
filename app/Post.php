@@ -17,6 +17,11 @@ class Post extends Model
 	    return $this->belongsTo('Lifetutor\User');
     }
 
+	public function comments()
+	{
+		return $this->hasMany('Lifetutor\Comment');
+	}
+
 	public function topic()
 	{
 		return $this->belongsTo('Lifetutor\Topic');
