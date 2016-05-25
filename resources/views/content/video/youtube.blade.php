@@ -15,7 +15,7 @@
         player = new YT.Player('player', {
             height: '390',
             width: '640',
-            videoId: '{{ $content->video_id }}',
+            videoId: '{{ $post->content->video->video_id }}',
             events: {
                 'onReady': onPlayerReady,
                 'onStateChange': onPlayerStateChange

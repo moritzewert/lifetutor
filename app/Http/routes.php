@@ -13,21 +13,6 @@
 
 Route::auth();
 Route::get('/', 'HomeController@welcome');
-Route::get('/home', 'HomeController@home');
-
-Route::resource('categories', 'CategoriesController');
-Route::group(['namespace' => 'Categories'], function()
-{
-    Route::resource('categories.courses', 'CoursesController');
-    Route::resource('categories.posts', 'PostsController');
-    Route::resource('categories.topics', 'TopicsController');
-    Route::group(['namespace' => 'Topics'], function()
-    {
-        Route::resource('categories.topics.posts', 'PostsController');
-        Route::resource('categories.topics.courses', 'CoursesController');
-        Route::group(['namespace' => 'Courses'], function()
-        {
-            Route::resource('categories.topics.courses.posts', 'PostsController');
-        });
-    });
-});
+Route::get('home', 'HomeController@home');
+Route::get('browse', ['uses' => 'ContentController@browse', 'as' => 'browse']);
+Route::get('post/{post_id}', ['uses' => 'ContentController@show', 'as' => 'show']);

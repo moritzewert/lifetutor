@@ -9,8 +9,8 @@
 
     <link href="{{ elixir('css/app.css') }}" rel="stylesheet">
 </head>
-<body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
+<body>
+    <nav id="navbar" class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="col-sm-12">
                 <div class="navbar-header">
@@ -32,7 +32,7 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ route('categories.index') }}">Categories</a></li>
+                        <li><a href="{{ route('browse') }}">Browse</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -57,10 +57,7 @@
             </div>
         </div>
     </nav>
-
-    <div class="container">
-        @yield('content')
-    </div>
+    @yield('content')
 
     <!-- JavaScripts -->
     <script src="{{ elixir('js/app.js') }}"></script>

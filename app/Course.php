@@ -3,16 +3,14 @@
 namespace Lifetutor;
 
 use Illuminate\Database\Eloquent\Model;
+use Lifetutor\Traits\PostContent;
 
 class Course extends Model
 {
-    public function topic()
-    {
-	    return $this->belongsTo('Lifetutor\Topic');
-    }
-
+	use PostContent;
+	
 	public function posts()
 	{
-		return $this->belongsToMany('Lifetutor\Post');
+		return $this->belongsToMany('Lifetutor\Post')->withPivot('order')->withTimestamps();
 	}
 }

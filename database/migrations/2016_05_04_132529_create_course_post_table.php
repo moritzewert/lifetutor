@@ -16,6 +16,7 @@ class CreateCoursePostTable extends Migration
             $table->increments('id');
             $table->integer('course_id');
             $table->integer('post_id');
+            $table->integer('order');
             $table->timestamps();
         });
     }

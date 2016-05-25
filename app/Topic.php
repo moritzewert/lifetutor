@@ -13,7 +13,7 @@ class Topic extends Model
 
 	public function category()
 	{
-		return $this->belongsTo('Lifetutor\Topic');
+		return $this->belongsTo('Lifetutor\Category');
 	}
 
 	public function courses()

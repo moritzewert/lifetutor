@@ -156,6 +156,11 @@ return [
         Lifetutor\Providers\EventServiceProvider::class,
         Lifetutor\Providers\RouteServiceProvider::class,
 
+        /*
+         * Third Party Service Providers
+         */
+        GrahamCampbell\Markdown\MarkdownServiceProvider::class,
+
     ],
 
     /*
@@ -201,6 +206,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /*
+         * Third Party Aliases
+         */
+        'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
 
     ],
 
