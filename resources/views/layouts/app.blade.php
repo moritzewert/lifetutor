@@ -58,7 +58,39 @@
         </div>
     </nav>
     @yield('content')
-
+    <footer>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <p class="lead"><i class="fa fa-road"></i> Lifetutor</p>
+                    <p>About lifetutor</p>
+                </div>
+                <div class="col-sm-2">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><span class="text-capitalize">Foo</span></li>
+                        <li><a href="#">foo</a></li>
+                        <li><a href="#">bar</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><span class="text-capitalize">Foo</span></li>
+                        <li><a href="#">foo</a></li>
+                        <li><a href="#">bar</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    Something
+                </div>
+            </div>
+            <hr>
+            <div class="col-sm-12">
+                <span class="pull-left">&copy 2016 wunderfactory</span>
+                <span class="pull-right">Some other thing</span>
+            </div>
+        </div>
+    </footer>
     <!-- JavaScripts -->
     <script src="{{ elixir('js/app.js') }}"></script>
 </body>
