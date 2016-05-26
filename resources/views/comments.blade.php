@@ -32,7 +32,7 @@
                         </a>
                     </div>
                     <div class="media-body">
-                        <h4 class="media-heading">{{ $comment->title }} <small>{{ $comment->created_at }}</small></h4>
+                        <h4 class="media-heading">{{ $comment->title }} <small>{{ $comment->created_at->diffForHumans() }}</small></h4>
                         {{ $comment->text }}
                     </div>
                 </div>
