@@ -26,9 +26,9 @@
             @foreach($post->comments as $comment)
                 <div class="media">
                     <div class="media-left col-sm-2">
-                        <a href="#" class="text-center">
-                            <img class="media-object img-circle" src="http://www.stamm-orion.com/Index/Bilder/wolfskopf.gif" width="100%" alt="...">
-                            <span>{{ $comment->author->name }}</span>
+                        <a href="#">
+                            <img class="media-object img-circle" src="http://www.stamm-orion.com/Index/Bilder/wolfskopf.gif" alt="...">
+                            <p>{{ $comment->author->name }}</p>
                         </a>
                     </div>
                     <div class="media-body">
