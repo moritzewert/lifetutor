@@ -29,6 +29,12 @@ $fa-font-path:        "//netdna.bootstrapcdn.com/font-awesome/4.6.1/fonts" !defa
 .container-guttered {
   margin-top: 22px;
 }
+.media-left img {
+  width: 100%;
+}
+.media-left p {
+  text-align: center;
+}
 .post-header {
   background-color: #0f7595;
   background-position: center center;
@@ -38,4 +44,21 @@ $fa-font-path:        "//netdna.bootstrapcdn.com/font-awesome/4.6.1/fonts" !defa
   margin-bottom: 1.5em;
   color: #fff;
   text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+}
+footer {
+  margin-top: 2em;
+}
+footer > div {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  font-family: "Raleway", "Helvetica Neue", sans-serif;
+}
+#footer {
+  border-top: solid 1px #07113A;
+  background-color: #515E91;
+  color: white;
+}
+#footer-last {
+  background-color: #172457;
+  color: white;
 }
