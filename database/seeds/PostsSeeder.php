@@ -27,6 +27,11 @@ class PostsSeeder extends Seeder
                 'title' => 'Formulare finden',
                 'description' => 'Welche Formulare musst du ausfüllen',
                 'topic_id' => 2
+            ],
+            [
+                'title' => 'Ultimate Course',
+                'description' => 'Fuck yeah! I\'m a course!',
+                'topic_id' => 2
             ]
         ];
 

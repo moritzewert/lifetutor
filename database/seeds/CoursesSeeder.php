@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Lifetutor\Course;
+use Lifetutor\Post;
 
 class CoursesSeeder extends Seeder
 {
@@ -22,7 +23,17 @@ class CoursesSeeder extends Seeder
 
         foreach($courses as $course)
         {
-            Course::create($course);
+            $course = Course::create($course);
+            $post = Post::findOrFail(4);
+            $post->content_id = $course->id;
+            $post->content_type = get_class($course);
+            $post->save();
+            $i = 1;
+            foreach(Post::where('id', '!=', 4)->get() as $post)
+            {
+                $course->posts()->attach($post, ['order' => $i]);
+                $i++;
+            }
         }
     }
 }
